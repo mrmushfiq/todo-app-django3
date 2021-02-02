@@ -20,13 +20,13 @@
             {% if things.completed %}
                 <tr class="table-secondary">
                     <td class="striker">{{things.item}}</td> 
-                    <td><center>Finish</center></td>
+                    <td><center><a href="{% url 'activate' things.id %}">Start Task</a></center></td>
                     <td><center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
                 </tr>
             {% else %}
                 <tr>
                     <td><a href="{% url 'edit' things.id %}">{{things.item}}</a></td> 
-                    <td><center>Start Task</center></td>
+                    <td><center><a href="{% url 'deactivate' things.id %}">End Task</a></center></td>
                     <td><center><a href="{% url 'delete' things.id %}">Delete</a></center></td>
                 </tr>
             {% endif %}

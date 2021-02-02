@@ -26,6 +26,18 @@ def delete(request, list_id):
     messages.success(request, ('Item has been Deleted!'))
     return redirect ('home')
 
+def activate(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = False
+    item.save()
+    return redirect('home')
+
+def deactivate(request, list_id):
+    item = List.objects.get(pk=list_id)
+    item.completed = True
+    item.save()
+    return redirect('home')
+
 def edit(request, list_id):
     if request.method == 'POST':
         item = List.objects.get(pk=list_id)
