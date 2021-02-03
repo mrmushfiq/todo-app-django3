@@ -1,4 +1,4 @@
-This is a simple To do App built using Django 3 and bootstrap 4.  
+This is a simple To do App built using Django 3, bootstrap 4 and SQLite3.  
 
 Installation:
 
